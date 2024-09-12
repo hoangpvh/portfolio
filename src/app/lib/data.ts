@@ -1,4 +1,5 @@
-import { Link } from "./types";
+
+import { Link, ProjectInfo } from "./types";
 
 
 export const links: Link[] = [
@@ -22,4 +23,35 @@ export const links: Link[] = [
     nameEng: "Contact",
     hash: "#contact",  
   },
-]
+];
+
+export const projectsData: ProjectInfo[] = [
+  {
+    title: "Snowlake Theme",
+    description: "A beautiful and modern theme for your website.",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "NodeJS"],
+    imageUrl: "/image1.png",
+    link: "https://www.google.com"
+  },
+  {
+    title: "Budget App",
+    description: "A beautiful and modern theme for your website.",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "NodeJS"],
+    imageUrl: "/image2.png",
+    link: "https://www.google.com"
+  },
+  {
+    title: "Storage App",
+    description: "A beautiful and modern theme for your website.",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "NodeJS"],
+    imageUrl: "/image3.png",
+    link: "https://www.google.com"
+  },
+  {
+    title: "Missio Theme",
+    description: "A beautiful and modern theme for your website.",
+    tags: ["React", "Next.js", "MongoDB", "Tailwind", "NodeJS"],
+    imageUrl: "/image4.png",
+    link: "https://www.google.com"
+  }
+];
