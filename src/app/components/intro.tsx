@@ -72,31 +72,31 @@ export default function Intro() {
         }}
       >
         <Link
-          href="#"
+          href="#contact"
           className='group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 dark:bg-white/10 active:scale-105 transition'>
           Connect < Mail color='#9ca3af' />
         </Link>
 
-        <a
+        <Link
           className=" bg-gray-900 p-4 text-white flex items-center gap-2
         rounded-full focus:scale-[1.15] hover:scale-[1.15]
         active:scale-105 transition cursor-pointer borderBlack
         dark:bg-white/10 dark:text-white hover:bg-gray-950"
-          href="#"
+          href="https://www.linkedin.com/in/ho%C3%A0ng-ph%E1%BA%A1m-83122a194/"
           target="_blank"
         >
           <BsLinkedin />
-        </a>
+        </Link>
 
-        <a
+        <Link
           className="bg-gray-900 p-4 text-white flex items-center gap-2
         rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack
         dark:bg-white/10 dark: text-white hover:bg-gray-950"
-          href="#"
+          href="https://github.com/hoangpvh"
           target="_blank"
         >
           <FaGithubSquare />
-        </a>
+        </Link>
       </motion.div>
     </section>
   )

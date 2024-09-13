@@ -5,23 +5,23 @@ import { Link, ProjectInfo } from "./types";
 export const links: Link[] = [
   {
     nameEng: "Home",
-    hash: "#home",  
+    hash: "#home",
   },
   {
     nameEng: "About",
-    hash: "#about",  
+    hash: "#about",
   },
   {
     nameEng: "Projects",
-    hash: "#projects",  
+    hash: "#projects",
   },
   {
     nameEng: "Skills",
-    hash: "#skills",  
+    hash: "#skills",
   },
   {
     nameEng: "Contact",
-    hash: "#contact",  
+    hash: "#contact",
   },
 ];
 
@@ -56,16 +56,16 @@ export const projectsData: ProjectInfo[] = [
   }
 ];
 
-export const skillsData=[
+export const skillsData = [
   "HTML",
   "CSS",
   "JavaScript",
-  "React",
-  "Next.js",
-  "MongoDB",
   "Tailwind",
   "TypeScript",
   "NodeJS",
   "Git",
   "Framer Motion",
+  "PHP",
+  "Laravel",
+  "Magento"
 ]

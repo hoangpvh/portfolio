@@ -8,16 +8,17 @@ import SubmitBtn from "./submit-btn";
 
 import { Fade } from "react-awesome-reveal";
 
-export default function Contact(){
+export default function Contact() {
   const { ref } = useSectionInView("#contact")
-  return(
+  return (
     <motion.section id="contact"
-    ref = {ref}
+      ref={ref}
+      className="mb-28 max-w-[53rem] text-center sm:mb-40 scroll-mt-28"
     >
       <Fade direction="up" delay={400} cascade damping={1e-1} triggerOnce={true}>
         <SectionHeading>
           {"Contact Me"}
-        </SectionHeading> 
+        </SectionHeading>
       </Fade>
       <Fade direction="up" delay={600} cascade damping={1e-1}>
         <p className="text-gray-700 -mt-6 dark:text-white/80">
@@ -26,22 +27,22 @@ export default function Contact(){
       </Fade>
       <Fade direction="up" delay={800} cascade damping={1e-1}>
         <form className="mt-10 flex pb-3 flex-col dark:text-black">
-          <input 
-          className="h-14 px-4 mb-3 rounded-lg border-black dark:bg-white/10 dark:text-white/80"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={100}
-          placeholder={"Your email"}
+          <input
+            className="h-14 px-4 mb-3 rounded-lg border-black dark:bg-white/10 dark:text-white/80"
+            name="senderEmail"
+            type="email"
+            required
+            maxLength={100}
+            placeholder={"Your email"}
           />
-          <textarea 
-          className="h-60 px-4 mb-3 rounded-lg border-black dark:bg-white/10 dark:text-white/80"
-          name="senderDesc"
-          required
-          maxLength={1500}
-          placeholder={"Your Description"}
+          <textarea
+            className="h-60 p-4 mb-3 rounded-lg border-black dark:bg-white/10 dark:text-white/80"
+            name="senderDesc"
+            required
+            maxLength={1500}
+            placeholder={"Your Description"}
           />
-          <SubmitBtn text={"Submit"}/>
+          <SubmitBtn text={"Submit"} />
         </form>
       </Fade>
     </motion.section>

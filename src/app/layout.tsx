@@ -12,7 +12,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Frontend | Advance",
+  title: "PVH - PORTFOLIO",
   description: "Frontend Advance Personal portfolio",
 };
 

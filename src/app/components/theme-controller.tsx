@@ -6,7 +6,7 @@ import Switch from "./switch";
 import { Moon, Sun } from "lucide-react"
 
 export default function ThemeSwitch() {
-  const {theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   return (
     <div className="fixed bottom-5 right-5">
       <Switch

@@ -59,7 +59,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
                     setActiveSection(link.hash);
                     setTimeOfLastClick(Date.now());
                   }}
-                  >
+                >
                   {link.nameEng}
                 </NextLink>
               </motion.div>
