@@ -1,3 +1,5 @@
+"use client";
+
 import ActiveSectionContextProvider from "./active-section";
 import ThemeContextProvider from "./theme-context";
 import React from "react";

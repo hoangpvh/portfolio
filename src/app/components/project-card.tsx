@@ -1,7 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { ProjectInfo } from "../lib/types";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 type ProjectProps = ProjectInfo;
 
@@ -11,13 +13,24 @@ export default function Project({
   tags,
   imageUrl,
 }: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(document.createElement("div")); // Create an HTML element
+  const ref = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
-    target: ref, // Use the current value of the ref
-    offset: [0.1, 1.33], // Correctly formatted offset array
+    target: ref,
+    offset: [0.1, 1.33],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]); // Corrected input and output ranges
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]); // Corrected input and output ranges
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <motion.div

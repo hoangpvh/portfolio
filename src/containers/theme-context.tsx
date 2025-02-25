@@ -19,8 +19,11 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState<Theme>("light");
+  const [mounted, setMounted] = useState(false);
 
   const toggleTheme = () => {
+    if (typeof window === 'undefined') return;
+
     if (theme === "light") {
       setTheme("dark");
       window.localStorage.setItem("theme", "dark");
@@ -32,19 +35,30 @@ export default function ThemeContextProvider({
     }
   };
 
+  // Mount
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Initialize theme
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
     if (localTheme) {
       setTheme(localTheme);
       if (localTheme === "dark") {
         document.documentElement.classList.add("dark");
       }
-      else if (window.matchMedia("(perfers-color-scheme: dark)").matches) {
-        setTheme("dark");
-        document.documentElement.classList.add("dark")
-      }
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      document.documentElement.classList.add("dark");
     }
   }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <ThemeContext.Provider

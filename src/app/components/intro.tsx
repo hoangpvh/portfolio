@@ -1,21 +1,30 @@
 "use client";
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { BsLinkedin } from 'react-icons/bs'
 import { FaGithubSquare } from 'react-icons/fa'
 import { Mail } from 'lucide-react'
-
-//Animations
-import { Fade } from 'react-awesome-reveal'
 import { motion } from 'framer-motion'
-import { useSectionInView } from '../lib/useInView';
-import { useActiveSectionContext } from '@/containers/active-section';
+import { useSectionInView } from '../lib/useInView'
+import dynamic from 'next/dynamic'
+
+const Fade = dynamic(() => import('react-awesome-reveal').then((mod) => mod.Fade), {
+  ssr: false
+})
 
 export default function Intro() {
   const { ref } = useSectionInView("#home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <section id="home" ref={ref} className='mb-28 max-w-[75rem] text-center sm:mb-0'></section>;
+  }
 
   return (
     <section id="home" ref={ref} className='mb-28 max-w-[75rem] text-center sm:mb-0'>
@@ -89,7 +98,7 @@ export default function Intro() {
         </Link>
 
         <Link
-          className="bg-gray-900 p-4 text-white flex items-center gap-2
+          className="bg-gray-900 p-4 flex items-center gap-2
         rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack
         dark:bg-white/10 dark: text-white hover:bg-gray-950"
           href="https://github.com/hoangpvh"
